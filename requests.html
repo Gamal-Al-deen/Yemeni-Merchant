@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>التاجر اليمني</title>
+  <link rel="stylesheet" href="Css/style.css" />
+  <link rel="stylesheet" href="Css/style-requcts.css" />
+  <link rel="website icon" href="imgs/logo.png" />
+</head>
+
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="sidebar-right">
+        <img src="imgs/logo.png" alt="الأشعار" width="70">
+        <h1>التاجر اليمني</h1>
+      </div>
+      <ul class="menu">
+        <a href="index.html"><li><img src="icon/home-icon-silhouette.png" alt=""><span class="menu-text">الرئيسية</span></li></a>
+        <a href="products.html"><li><img src="icon/booking.png" alt=""><span class="menu-text">المنتجات</span></li></a>
+        <a href="requests.html"><li class="selected"><img src="icon/lists.png" alt=""><span class="bad menu-text">الطلبات</span><span class="badge-2">3</span></li></a>
+        <a href="messages.html"><li><img src="icon/chat-bubble.png" alt=""><span class="bad menu-text">الرسائل</span><span class="badge-3">1</span></li></a>
+                <a href="contact..html"><li><img src="icon/information.png" alt=""><span class="menu-text">تواصل معنا</span></li></a>
+        <a href="account.html"><li><img src="icon/profile.png" alt=""><span class="menu-text">إعدادات الحساب</span></li></a>
+      </ul>
+      <button class="add-button"  onclick="window.location.href='products.html?openModal=true'">إضافة منتج</button>
+    </aside>
+
+    <main class="main-content">
+      <header class="navbar">
+        <img src="imgs/logo.png" alt="الأشعار" width="80">
+        <h2>الـــتـــــــاجــــر الـــيـــمـــنـــي</h2>
+
+        <div class="nav-actions">
+          <input type="text" placeholder="بحث...">
+          <button><img src="icon/magnifier.png" alt="" width="18" height="18"></button>
+          <div class="notification-icon">
+            <img src="icon/notification.png" alt="" width="32" height="32">
+            <span class="badge">3</span>
+          </div>
+          <img src="icon/account.png" alt="" width="32" height="32" class="account-img">
+        </div>
+      </header>
+
+      <section class="orders-section">
+        <h2>الطلبات الحالية</h2>
+
+        <div class="filters">
+          <select>
+            <option value="">كل الحالات</option>
+            <option value="جديد">جديد</option>
+            <option value="قيد المعالجة">قيد المعالجة</option>
+            <option value="تم التوصيل">تم التوصيل</option>
+          </select>
+          <input type="text" placeholder="ابحث">
+        </div>
+
+        <table class="orders-table">
+          <thead>
+            <tr>
+              <th>رقم الطلب</th>
+              <th>اسم العميل</th>
+              <th>المنتج</th>
+              <th>الكمية</th>
+              <th>الحالة</th>
+              <th>تاريخ الطلب</th>
+              <th>الإجراء</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- سيتم تعبئة الصفوف من JavaScript -->
+          </tbody>
+        </table>
+      </section>
+
+      <footer>
+        <p>حقوق الطبع والنشر محفوظ لدى م/ جمال الدين 2025 &copy;</p>
+        <div class="icon-twasl">
+          <a href="https://wa.me/967770569805 " target="_blank" aria-label="WhatsApp">
+            <img src="icon/whatsapp.png" alt="واتساب">
+          </a>
+          <a href="https://t.me/gamal_aldeen2" target="_blank" aria-label="telegram">
+            <img src="icon/telegram.png" alt="تيلجرام">
+          </a>
+          <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+            <img src="icon/facebook.png" alt="فيس بك">
+          </a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- ربط ملف JavaScript -->
+  <script src="Js/requests.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

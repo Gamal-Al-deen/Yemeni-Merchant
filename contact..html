@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تواصل معنا</title>
+  <link rel="stylesheet" href="Css/style.css" />
+  <link rel="stylesheet" href="Css/contact.css" />
+  <link rel="website icon" href="imgs/logo.png" />
+</head>
+
+<body>
+  <div class="container">
+    <!-- ✅ الشريط الجانبي -->
+    <aside class="sidebar">
+      <div class="sidebar-right">
+        <a href="index.html"> 
+
+          <img src="imgs/logo.png" alt="الشعار" width="70">
+        </a>
+        <h1>التاجر اليمني</h1>
+      </div>
+      <ul class="menu">
+        <a href="index.html">
+          <li><img src="icon/home-icon-silhouette.png" alt=""><span class="menu-text">الرئيسية</span></li>
+        </a>
+        <a href="products.html">
+          <li><img src="icon/booking.png" alt=""><span class="menu-text">المنتجات</span></li>
+        </a>
+        <a href="requests.html">
+          <li><img src="icon/lists.png" alt=""><span class="menu-text">الطلبات</span><span class="badge-2">3</span></li>
+        </a>
+        <a href="messages.html"><li><img src="icon/chat-bubble.png" alt=""><span class="bad menu-text">الرسائل</span><span class="badge-3">1</span></li></a>
+        <a href="contact.html">
+          <li class="selected"><img src="icon/information.png" alt=""><span class="menu-text">تواصل معنا</span></li>
+        </a>
+        <a href="account.html">
+          <li><img src="icon/profile.png" alt=""><span class="menu-text">إعدادات الحساب</span></li>
+        </a>
+      </ul>
+      <button class="add-button"  onclick="window.location.href='products.html?openModal=true'">إضافة منتج</button>
+    </aside>
+
+    <!-- ✅ المحتوى الرئيسي -->
+    <main class="main-content">
+      <!-- ✅ رأس الصفحة -->
+      <header class="navbar">
+        <img src="imgs/logo.png" alt="الشعار" width="80">
+        <h2>الـــتـــــــاجــــر الـــيـــمـــنـــي</h2>
+        <div class="nav-actions">
+          <!-- <input type="text" placeholder="بحث..." />
+          <button><img src="icon/magnifier.png" alt="" width="15" height="15"></button> -->
+          <div class="notification-icon">
+            <img src="icon/notification.png" alt="" width="25" height="25">
+            <span class="badge">3</span>
+          </div>
+          <img src="icon/account.png" alt="" width="32" height="32" class="account-img">
+        </div>
+      </header>
+
+      <!-- ✅ نموذج التواصل -->
+      <section class="contact-section">
+
+        <h2 class="section-text2"> راسلنا مباشرة:</h2>
+        <div class="icon-twasl2">
+
+          <a href="https://wa.me/967770569805 " target="_blank" aria-label="WhatsApp">
+            <img src="icon/whatsapp.png" alt="واتساب">
+          </a>
+          <a href="https://t.me/gamal_aldeen2" target="_blank" aria-label="telegram">
+            <img src="icon/telegram.png" alt="تيلجرام">
+          </a>
+          <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+            <img src="icon/facebook.png" alt="فيس بك">
+          </a>
+        </div>
+
+        <h4 class="section-text2">راسلنا عبر البريد الاكتروني:</h4>
+        <form id="contactForm" class="contact-form">
+          <input type="text" id="name" name="name" placeholder="الاسم الكامل" required>
+          <input type="email" id="email" name="email" placeholder="البريد الإلكتروني" required>
+          <textarea id="message" name="message" rows="5" placeholder="اكتب رسالتك هنا" required></textarea>
+          <button type="submit">إرسال الرسالة</button>
+        </form>
+        <div id="successMessage" class="hidden">✅ تم إرسال رسالتك بنجاح! سنرد عليك قريبًا.</div>
+      </section>
+
+      <!-- ✅ التذييل -->
+      <footer>
+        <p>حقوق الطبع والنشر محفوظ لدى م/ جمال الدين 2025 &copy;</p>
+        <div class="icon-twasl">
+          <a href="https://wa.me/967770569805" target="_blank"><img src="icon/whatsapp.png" alt="واتساب"></a>
+          <a href="https://t.me/gamal_aldeen2" target="_blank"><img src="icon/telegram.png" alt="تيلجرام"></a>
+          <a href="https://www.facebook.com" target="_blank"><img src="icon/facebook.png" alt="فيسبوك"></a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- ✅ JavaScript -->
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (name && email && message) {
+        document.getElementById("successMessage").classList.remove("hidden");
+        this.reset();
+        setTimeout(() => {
+          document.getElementById("successMessage").classList.add("hidden");
+        }, 5000);
+      }
+    });
+  </script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

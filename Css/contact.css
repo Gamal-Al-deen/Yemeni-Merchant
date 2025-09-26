@@ -1,0 +1,188 @@
+
+  :root{
+    --font: my-font, sans-serif;
+  }
+body {
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    font-family: my-font,sans-serif;
+    max-height: 100px;
+    height: 70% !important;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    margin-bottom: 0px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    max-height: 100px;
+    font-family: var(--font);
+  }
+  .badge-2{
+    
+    font-size: 10px;
+
+  }
+  .badge-3{
+    margin-right: -100px !important;
+    font-size: 10px;
+
+  }
+  h1 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    font-family: my-font, sans-serif;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #34495e;
+    font-weight: bold;
+  }
+  .contact-section .icon-twasl2{
+margin-right: 200px;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus, textarea:focus {
+    border-color: #e66b19;
+    outline: none;
+  }
+  
+  button {
+    background-color: #e66b19;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: my-font,sans-serif;
+    transition: background-color 0.3s ease;
+  }
+  
+
+  #successMessage {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #dff0d8;
+    color: #3c763d;
+    border-radius: 8px;
+    text-align: center;
+    font-family: var(--font);
+    font-weight: bold;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .add-button{
+  margin-bottom: 200px !important;
+ 
+  }
+  
+
+  .sidebar{
+margin-top: 0;
+width: 180px;
+margin-right: 2px !important;
+padding-right: 2px !important;
+  }
+
+  .menu{
+    margin-top: 20px;
+  }
+
+  .navbar{
+height:  50px;
+  }
+
+  .nav-actions button{
+
+height: 40px;
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .save-btn,
+  .cancel-btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .save-btn {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .cancel-btn {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .save-btn:hover {
+    background-color: #218838;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #c82333;
+  }
+
+ 
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  .reset-btn:hover {
+    background: #ffd6d6;
+  }
+  :root{
+    --bg-color:#fff;
+    --text-color: black;
+  }
+
+  [data-theme="dark"] {
+    --bg-color: #666161;
+    --text-color: #eaeaea;
+  }
+ 
+  
+  [data-theme="dark"] .container{
+   background-color:  #4a4a4a;
+   color: #eaeaea;
+  }
+
+  [data-theme="dark"] input{
+   background-color:  #666161;}
+
+  [data-theme="dark"] input{
+   background-color:  #666161;}
+
+  [data-theme="dark"] textarea{
+   background-color:  #666161;}

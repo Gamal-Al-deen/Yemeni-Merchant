@@ -1,0 +1,312 @@
+/* رسائل - يحافظ على بساطة الشكل ويتوافق مع RTL و style.css العام */
+
+/* الحاوية الرئيسية لقسم الرسائل */
+.messages-section {
+  display: flex;
+  height: calc(100vh - 150px); /* اضبطها حسب ارتفاع الهيدر والفوتر في موقعك */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* قائمة المحادثات */
+.chat-list {
+  width: 30%;
+  min-width: 260px;
+  border-left: 1px solid #ddd; /* لأن الاتجاه RTL */
+  overflow-y: auto;
+  background: #fff;
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.chat-item:hover {
+  background: #f7f7f7;
+}
+
+.chat-item.is-active {
+  background: #f0f7ff;
+}
+
+.chat-item .avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 8px; /* لراحة العين في RTL */
+}
+
+.chat-item-info {
+  flex: 1;
+  min-width: 0; /* يمنع overflow النص */
+}
+
+.chat-name {
+  display: block;
+  font-size: 14px;
+  color: #222;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chat-last {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* نافذة المحادثة */
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #fafafa;
+}
+
+/* ترويسة المحادثة */
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
+
+.chat-header .avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 8px;
+}
+
+.chat-title {
+  font-size: 14px;
+  color: #222;
+}
+
+/* منطقة الرسائل */
+.chat-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fafafa;
+}
+
+.message {
+  position: relative;
+  max-width: 72%;
+  padding: 10px 12px 18px; /* مساحة للوقت */
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #111;
+  word-wrap: break-word;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.02);
+}
+
+.message--sent {
+  align-self: flex-start;          /* رسائلك تظهر يمين في RTL أم يسار؟ اخترنا يسار للتوازن */
+  background: #d1f0ff;
+}
+
+.message--received {
+  align-self: flex-end;
+  background: #eaeaea;
+}
+
+.message-time {
+  position: absolute;
+  bottom: 6px;
+  inset-inline-end: 10px; /* يعمل مع RTL و LTR */
+  font-size: 11px;
+  color: #666;
+}
+
+/* إدخال الرسالة */
+.chat-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  background: #fff;
+  border-top: 1px solid #ddd;
+}
+
+.chat-input input[type="text"] {
+  flex: 1;
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid #cfcfcf;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.chat-input input[type="text"]:focus {
+  border-color: #7bb7ff;
+  box-shadow: 0 0 0 3px rgba(123, 183, 255, 0.15);
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: none;
+  background: #f3f6fb;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.05s ease;
+}
+
+.btn-icon:hover {
+  background: #e9f2ff;
+}
+
+.btn-icon:active {
+  transform: translateY(1px);
+}
+
+.btn-icon img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* تمرير لطيف */
+.chat-list::-webkit-scrollbar,
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-list::-webkit-scrollbar-thumb,
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #d8d8d8;
+  border-radius: 8px;
+}
+
+/* توافق الوضع الليلي إن وجد body.dark أو [data-theme="dark"] */
+body.dark .messages-section,
+[data-theme="dark"] .messages-section {
+  background: #1e1f24;
+  border-color: #2a2b31;
+}
+
+body.dark .chat-list,
+[data-theme="dark"] .chat-list {
+  background: #1e1f24;
+  border-left-color: #2a2b31;
+}
+
+body.dark .chat-item,
+[data-theme="dark"] .chat-item {
+  border-bottom-color: #2a2b31;
+}
+
+body.dark .chat-item:hover,
+[data-theme="dark"] .chat-item:hover {
+  background: #24262d;
+}
+
+body.dark .chat-item.is-active,
+[data-theme="dark"] .chat-item.is-active {
+  background: #212a35;
+}
+
+body.dark .chat-name,
+[data-theme="dark"] .chat-name {
+  color: #f1f1f1;
+}
+
+body.dark .chat-last,
+[data-theme="dark"] .chat-last {
+  color: #a8a8a8;
+}
+
+body.dark .chat-window,
+[data-theme="dark"] .chat-window {
+  background: #181a1f;
+}
+
+body.dark .chat-header,
+[data-theme="dark"] .chat-header {
+  background: #1d2026;
+  border-bottom-color: #2a2b31;
+}
+
+body.dark .chat-title,
+[data-theme="dark"] .chat-title {
+  color: #f1f1f1;
+}
+
+body.dark .chat-messages,
+[data-theme="dark"] .chat-messages {
+  background: #181a1f;
+}
+
+body.dark .message--sent,
+[data-theme="dark"] .message--sent {
+  background: #12344b;
+  color: #e7f6ff;
+}
+
+body.dark .message--received,
+[data-theme="dark"] .message--received {
+  background: #2a2f36;
+  color: #eaeaea;
+}
+
+body.dark .message-time,
+[data-theme="dark"] .message-time {
+  color: #9aa4af;
+}
+
+body.dark .chat-input,
+[data-theme="dark"] .chat-input {
+  background: #1e1f24;
+  border-top-color: #2a2b31;
+}
+
+body.dark .chat-input input[type="text"],
+[data-theme="dark"] .chat-input input[type="text"] {
+  background: #181a1f;
+  color: #f1f1f1;
+  border-color: #31333a;
+}
+
+body.dark .chat-input input[type="text"]:focus,
+[data-theme="dark"] .chat-input input[type="text"]:focus {
+  border-color: #3d6fb5;
+  box-shadow: 0 0 0 3px rgba(61, 111, 181, 0.25);
+}
+
+body.dark .btn-icon,
+[data-theme="dark"] .btn-icon {
+  background: #262a31;
+}
+
+body.dark .btn-icon:hover,
+[data-theme="dark"] .btn-icon:hover {
+  background: #2d3240;
+}

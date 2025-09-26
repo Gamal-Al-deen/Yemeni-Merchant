@@ -1,0 +1,520 @@
+
+@font-face {
+  font-family: "my-font";
+  src: url(../font/Tajawal-Medium.ttf)
+}
+  @font-face {
+    font-family: "my-font-bold";
+    src: url(../font/Tajawal-Bold.ttf)
+  }
+  
+  :root{
+    --main-color: #e66b19;
+  }
+  
+  
+    .products-section {
+      max-width: 900px;
+      margin: auto;
+    }
+
+  .card {
+    display: flex;
+    align-items: center;
+    background-color: #eee;
+    color: black;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .card-ico {
+    font-size: 28px;
+    margin-left: 15px;
+  }
+  
+  .card-content h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+    
+    .card-content p {
+      margin: 5px 0 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  
+
+    .add-produc {
+      text-align: right;
+      margin-bottom: 25px;
+    }
+  
+  .add-product-btn {
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-product-btn:hover {
+    background-color: #da5902;
+  }
+
+  
+  .add-product-btn img {
+    vertical-align: middle;
+  }
+  
+  .product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    direction: rtl;
+    font-family: my-font ,sans-serif
+  }
+  
+  .product-table th,
+  .product-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .product-table th {
+    background-color: var(--main-color) ;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .product-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .product-table tr:hover {
+    background-color: #e9f5ff;
+  }
+  
+  p>samp{
+  color: var(--main-color);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+
+  /* ✅ تنسيق الغطاء الخلفي للـ modal */
+.modal-overlay {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* ✅ تنسيق محتوى الـ modal */
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: slideIn 0.4s ease-out forwards;
+  transform: translateY(-30px);
+  opacity: 0;
+}
+
+/* ✅ رأس الـ modal */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* ✅ زر الإغلاق */
+.close-btn {
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+}
+
+/* ✅ أزرار الحفظ والإلغاء */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cancel-btn {
+  background: #ccc;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.save-btn {
+  background: #4CAF50 !important;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  
+}
+
+/* ✅ تأثير دخول */
+@keyframes slideIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 35px;
+  border-radius: 14px;
+  width: 600px;
+  max-width: 95%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.4s ease-out forwards;
+  transform: translateY(-30px);
+  opacity: 0;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  font-size: 26px;
+  cursor: pointer;
+  color: #888;
+}
+
+form#productForm input,
+form#productForm select,
+form#productForm textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+form#productForm input:focus,
+form#productForm select:focus,
+form#productForm textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.cancel-btn {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+@keyframes slideIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  width: 600px;
+  max-width: 95%;
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+ 
+
+  /* ========================================= */
+ /* ✅ تنسيق الفلاتر */
+ .filters {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.filters select {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #fff;
+  min-width: 140px;
+}
+
+/* ✅ أزرار التعديل والحذف داخل الجدول */
+.product-table td button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* زر التعديل */
+.product-table td button:nth-child(1) {
+  background-color: #e0a800; /* أصفر */
+  color: #fff;
+}
+
+.product-table td button:nth-child(1):hover {
+  background-color: #e0a800;
+}
+
+/* زر الحذف */
+.product-table td button:nth-child(2) {
+  background-color: #dc3545; /* أحمر */
+  color: #fff;
+}
+
+.product-table td button:nth-child(2):hover {
+  background-color: #c82333;
+}
+
+
+/* ✅ ترتيب الحقول بجانب بعض */
+.row-fields {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.row-fields input,
+.row-fields select {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/* ✅ تنسيق أزرار الحفظ والإلغاء */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.save-btn,
+.cancel-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: my-font,sans-serif;
+}
+
+.save-btn {
+  color: white;
+  margin-left: 200px;
+}
+
+.save-btn:hover{
+  background-color: #4f8b52 !important;
+}
+.cancel-btn {
+  background-color: #dc3545 !important;
+  color: white;
+}
+
+
+.cancel-btn:hover {
+  background-color: #c82333!important;
+}
+
+/* تنسيق حاوية الفلاتر والبحث */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
+  align-items: center;
+}
+
+/* تنسيق مربع البحث */
+#searchInput {
+  flex: 1;
+  min-width: 200px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+#searchInput:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+/* تنسيق القوائم المنسدلة */
+.filters select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filters select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+/* تحسين المظهر في الشاشات الصغيرة */
+@media (max-width: 600px) {
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  #searchInput, .filters select {
+    width: 100%;
+  }
+}
+
+
+/* ==================================================================================== */
+.edit-btn, .delete-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #4CAF50 !important;
+  color: white;
+  font-family: my-font,sans-serif;
+}
+
+.edit-btn:hover {
+  background-color: #45a049 !important;
+}
+
+.delete-btn {
+  font-family: my-font,sans-serif;
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #da190b;
+}
+
+.btn-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+#filterStatus,#filterCity{
+  font-family: my-font,sans-serif;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+:root{
+  --bg-color:#fff;
+  --text-color: black;
+}
+
+[data-theme="dark"] {
+  --bg-color: #666161;
+  --text-color: #eaeaea;
+}
+
+
+[data-theme="dark"] .products-section{
+ background-color:  #4a4a4a;
+ color: #eaeaea;
+}
+
+[data-theme="dark"] input{
+ background-color:  #666161;}
+
+[data-theme="dark"] .card{
+ background-color:  #666161;}
+
+[data-theme="dark"] select{
+ background-color:  #666161;}
+
+ #deleteConfirmModal .modal-content {
+  max-width: 400px;
+  text-align: center;
+}
+
+#deleteConfirmModal .modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.confirm-delete-btn {
+  background: #e63946;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.confirm-delete-btn:hover {
+  background: #c82333;
+}

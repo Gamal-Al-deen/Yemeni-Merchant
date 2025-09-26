@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الرسائل - التاجر اليمني</title>
+  <link rel="stylesheet" href="Css/style.css" />
+  <link rel="stylesheet" href="Css/messages.css" />
+  <link rel="website icon" href="imgs/logo.png" />
+</head>
+
+<body>
+  <div class="container">
+    <!-- الشريط الجانبي -->
+    <aside class="sidebar">
+      <div class="sidebar-right">
+        <a href="index.html"><img src="imgs/logo.png" alt="الشعار" width="70"></a>
+        <h1>التاجر اليمني</h1>
+      </div>
+      <ul class="menu">
+        <a href="index.html"><li><img src="icon/home-icon-silhouette.png" alt=""><span class="menu-text">الرئيسية</span></li></a>
+        <a href="products.html"><li><img src="icon/booking.png" alt=""><span class="menu-text">المنتجات</span></li></a>
+        <a href="requests.html"><li><img src="icon/lists.png" alt=""><span class="bad menu-text">الطلبات</span><span class="badge-2">3</span></li></a>
+        <a href="#"><li class="selected"><img src="icon/chat-bubble.png" alt=""><span class="menu-text">الرسائل</span></li></a>
+        <a href="contact..html"><li><img src="icon/information.png" alt=""><span class="menu-text">تواصل معنا</span></li></a>
+        <a href="account.html"><li><img src="icon/profile.png" alt=""><span class="menu-text">إعدادات الحساب</span></li></a>
+      </ul>
+      <button class="add-button" onclick="window.location.href='products.html?openModal=true'">
+     
+        <span>إضافة منتج</span>
+      </button>
+          </aside>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="main-content">
+      <!-- الهيدر -->
+      <header class="navbar">
+        <a href="index.html"><img src="imgs/logo.png" alt="الشعار" width="80"></a>
+        <h1>الـــتـــــــاجــــر الـــيـــمـــنـــي</h1>
+        <div class="nav-actions">
+          <input type="text" placeholder="بحث في الرسائل..." />
+          <button><img src="icon/magnifier.png" alt="" width="18" height="18"></button>
+          <div class="notification-icon">
+            <img src="icon/notification.png" alt="" width="32" height="32">
+            <span class="badge">3</span>
+          </div>
+          <img src="icon/account.png" alt="" width="32" height="32" class="account-img">
+        </div>
+      </header>
+
+      <!-- قسم الرسائل -->
+      <section class="messages-section">
+        <!-- قائمة المحادثات -->
+        <div class="chat-list">
+          <div class="chat-item is-active">
+            <img src="imgs/alshamy.jpg" alt="مستخدم" class="avatar">
+            <div class="chat-item-info">
+              <strong class="chat-name">الباشمهندس ابراهيم الشامي </strong>
+              <p class="chat-last">موقعك رهيب ياجمال...</p>
+            </div>
+          </div>
+
+          <div class="chat-item">
+            <img src="imgs/saqr.jpeg" alt="مستخدم" class="avatar">
+            <div class="chat-item-info">
+              <strong class="chat-name"> م/صقر الحراني</strong>
+              <p class="chat-last">تم استلام الطلب...</p>
+            </div>
+          </div>
+          <div class="chat-item">
+            <img src="imgs/يهارات.jpg" alt="مستخدم" class="avatar">
+            <div class="chat-item-info">
+              <strong class="chat-name"> جملة الرجوي</strong>
+              <p class="chat-last">  وعليكم السلام...</p>
+            </div>
+          </div>
+          <div class="chat-item">
+            <img src="imgs/عسل.jpg" alt="مستخدم" class="avatar">
+            <div class="chat-item-info">
+              <strong class="chat-name"> مملكة العسل</strong>
+              <p class="chat-last">تم استلام الطلب...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- نافذة المحادثة -->
+        <div class="chat-window">
+          <div class="chat-header">
+            <img src="imgs/alshamy.jpg" alt="مستخدم" class="avatar">
+            <strong class="chat-title"> الباشمهندس ابراهيم الشامي</strong>
+          </div>
+
+          <div class="chat-messages">
+            <div class="message message--sent">
+               موقعك رهيب ياجمال سويت لك الدرجة كامل
+              <span class="message-time">10:12 ص</span>
+            </div>
+            <div class="message message--received">
+            تسلم يادكتور ربي يسعدك
+              <span class="message-time">10:13 ص</span>
+            </div>
+          </div>
+
+          <div class="chat-input">
+            <input type="text" placeholder="اكتب رسالتك..." />
+            <button class="btn-icon" title="إرسال">
+              <img src="icon/direct.png" alt="إرسال">
+            </button>
+            <button class="btn-icon" title="إرفاق">
+              <img src="icon/add.png" alt="إرفاق">
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- الفوتر -->
+      <footer>
+        <p>حقوق الطبع والنشر محفوظ لدى م/ جمال الدين 2025 &copy;</p>
+        <div class="icon-twasl">
+          <a href="https://wa.me/967770569805" target="_blank"><img src="icon/whatsapp.png" alt="واتساب"></a>
+          <a href="https://t.me/gamal_aldeen2" target="_blank"><img src="icon/telegram.png" alt="تيلجرام"></a>
+          <a href="https://www.facebook.com" target="_blank"><img src="icon/facebook.png" alt="فيس بوك"></a>
+        </div>
+      </footer>
+    </main>
+  </div>
+  <script src="Js/main.js"></script>
+</body>
+</html>
