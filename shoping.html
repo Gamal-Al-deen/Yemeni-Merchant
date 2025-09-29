@@ -16,8 +16,8 @@
         <h1>التاجر اليمني</h1>
       </div>
       <ul class="menu">
-        <a href="index.html"><li class="selected"><img src="icon/home-icon-silhouette.png" alt="أيقونة الرئيسية"><span class="menu-text">الرئيسية</span></li></a>
-        <a href="shoping.html"><li><img src="icon/purchase.png" alt="أيقونة المنتجات"><span class="menu-text">التسوق</span></li></a>
+        <a href="index.html"><li ><img src="icon/home-icon-silhouette.png" alt="أيقونة الرئيسية"><span class="menu-text">الرئيسية</span></li></a>
+        <a href="shoping.html"><li class="selected"><img src="icon/purchase.png" alt="أيقونة المنتجات"><span class="menu-text">التسوق</span></li></a>
         <a href="add_products.html"><li><img src="icon/booking.png" alt="أيقونة المنتجات"><span class="menu-text">أضافة منتج</span></li></a>
         <a href="requests.html"><li><img src="icon/lists.png" alt="أيقونة الطلبات"><span class="bad menu-text">الطلبات</span><span class="badge-2">3</span></li></a>
         <a href="messages.html"><li><img src="icon/chat-bubble.png" alt="أيقونة الرسائل"><span class="bad menu-text">الرسائل</span><span class="badge-3">1</span></li></a>
@@ -44,19 +44,22 @@
 
       
       
-      <section class="welcome">
-        <h3>مرحباً بك في التاجر اليمني</h3>
-     
-        <section class="slider">
-          <div class="slides">
-            <img src="imgs/قهوة22.jpg" class="active" alt="صورة 1">
-            <img src="imgs/slied1.png" alt="صورة 2">
-            <img src="imgs/7cb68e5d744b5d4a3adf4d60a47a8be1.jpg" alt="صورة 3">
-          </div>
-          <button class="prev" aria-label="السابق">&#10094;</button>
-          <button class="next" aria-label="التالي">&#10095;</button>
-          <div class="dots"></div>
-        </section>
+
+     <div id="userModal" class="user-modal">
+      <div class="modal-content">
+      
+        <img id="modalUserImage" src="user.png" alt="User" class="user-avatar">
+    
+        <div class="user-info">
+          <p id="userName" class="user-name"></p>
+          <p id="userEmail" class="user-email"></p>
+        </div>
+   
+        <a href="account.html" class="settings-link">
+          <img src="icon/profile.png" alt="Settings" class="settings-icon">
+        </a>
+      </div>
+    </div>
 
 
         <div class="filter-bar">
@@ -92,6 +95,10 @@
         <img src="icon/up-arrow.png" alt="أعلى" />
       </button>
 
+      <button id="backToTop" title="الرجوع للأعلى">
+        <img src="icon/up-arrow.png" alt="أعلى" />
+      </button>
+
       <footer>
         <p>حقوق الطبع والنشر محفوظ لدى م/ جمال الدين 2025 &copy;</p>
         <div class="icon-twasl">
@@ -109,24 +116,6 @@
     </main>
   </div>
 
-
-     <div id="userModal" class="user-modal">
-      <div class="modal-content">
-      
-        <img id="modalUserImage" src="user.png" alt="User" class="user-avatar">
-    
-        <div class="user-info">
-          <p id="userName" class="user-name"></p>
-          <p id="userEmail" class="user-email"></p>
-        </div>
-   
-        <a href="account.html" class="settings-link">
-          <img src="icon/profile.png" alt="Settings" class="settings-icon">
-        </a>
-      </div>
-    </div>
-    
-
   <div id="detailsModal" class="modal">
     <div class="modal-content">
       <span class="close" aria-label="إغلاق النافذة">&times;</span>
@@ -134,23 +123,21 @@
       <h3 id="modalTitle"></h3>
       <div id="modalDescription"></div>
 
-      
+
       <div id="followSection" style="display: none; margin-top: 15px;">
         <p id="followerCount">عدد المتابعين: 0</p>
         <button id="followBtn">متابعة</button>
       </div>
-    
+
       <div class="modal-actions">
         <button id="requestBtn">طلب الآن</button>
         <button id="cancelBtn">إلغاء</button>
       </div>
 
-    
       <div id="confirmSection" style="display: none;">
         <button id="confirmBtn">تأكيد الطلب</button>
       </div>
 
- 
       <div id="messageBox" class="message-box" style="display: none;"></div>
 
     </div>

@@ -7,11 +7,9 @@
     font-family: "my-font-bold";
     src: url(../font/Tajawal-Bold.ttf)
   }
-  
   :root{
     --main-color: #e66b19;
   }
-  
   
     .products-section {
       max-width: 900px;
@@ -45,7 +43,6 @@
       font-weight: bold;
     }
   
-
     .add-produc {
       text-align: right;
       margin-bottom: 25px;
@@ -65,8 +62,7 @@
   .add-product-btn:hover {
     background-color: #da5902;
   }
-
-  
+ 
   .add-product-btn img {
     vertical-align: middle;
   }
@@ -106,18 +102,8 @@
   }
 
 
-  /* ✅ تنسيق الغطاء الخلفي للـ modal */
-.modal-overlay {
-  position: fixed;
-  top: 0; right: 0; bottom: 0; left: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
 
-/* ✅ تنسيق محتوى الـ modal */
+
 .modal-content {
   background: #fff;
   padding: 25px;
@@ -131,7 +117,6 @@
   opacity: 0;
 }
 
-/* ✅ رأس الـ modal */
 .modal-header {
   display: flex;
   justify-content: space-between;
@@ -139,14 +124,12 @@
   margin-bottom: 15px;
 }
 
-/* ✅ زر الإغلاق */
 .close-btn {
   font-size: 24px;
   cursor: pointer;
   color: #888;
 }
 
-/* ✅ أزرار الحفظ والإلغاء */
 .modal-actions {
   display: flex;
   justify-content: flex-end;
@@ -172,7 +155,6 @@
   
 }
 
-/* ✅ تأثير دخول */
 @keyframes slideIn {
   to {
     transform: translateY(0);
@@ -265,10 +247,8 @@ form#productForm textarea:focus {
   border-radius: 14px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
- 
 
   /* ========================================= */
- /* ✅ تنسيق الفلاتر */
  .filters {
   display: flex;
   gap: 12px;
@@ -285,7 +265,6 @@ form#productForm textarea:focus {
   min-width: 140px;
 }
 
-/* ✅ أزرار التعديل والحذف داخل الجدول */
 .product-table td button {
   padding: 6px 12px;
   border: none;
@@ -295,9 +274,9 @@ form#productForm textarea:focus {
   transition: background-color 0.3s ease;
 }
 
-/* زر التعديل */
+
 .product-table td button:nth-child(1) {
-  background-color: #e0a800; /* أصفر */
+  background-color: #e0a805; 
   color: #fff;
 }
 
@@ -305,9 +284,9 @@ form#productForm textarea:focus {
   background-color: #e0a800;
 }
 
-/* زر الحذف */
+
 .product-table td button:nth-child(2) {
-  background-color: #dc3545; /* أحمر */
+  background-color: #dc3545;
   color: #fff;
 }
 
@@ -315,8 +294,6 @@ form#productForm textarea:focus {
   background-color: #c82333;
 }
 
-
-/* ✅ ترتيب الحقول بجانب بعض */
 .row-fields {
   display: flex;
   gap: 10px;
@@ -333,7 +310,7 @@ form#productForm textarea:focus {
   box-sizing: border-box;
 }
 
-/* ✅ تنسيق أزرار الحفظ والإلغاء */
+
 .modal-actions {
   display: flex;
   justify-content: flex-end;
@@ -364,12 +341,10 @@ form#productForm textarea:focus {
   color: white;
 }
 
-
 .cancel-btn:hover {
   background-color: #c82333!important;
 }
 
-/* تنسيق حاوية الفلاتر والبحث */
 .filters {
   display: flex;
   flex-wrap: wrap;
@@ -378,7 +353,6 @@ form#productForm textarea:focus {
   align-items: center;
 }
 
-/* تنسيق مربع البحث */
 #searchInput {
   flex: 1;
   min-width: 200px;
@@ -395,7 +369,6 @@ form#productForm textarea:focus {
   outline: none;
 }
 
-/* تنسيق القوائم المنسدلة */
 .filters select {
   padding: 8px 12px;
   border: 1px solid #ccc;
@@ -412,7 +385,6 @@ form#productForm textarea:focus {
   outline: none;
 }
 
-/* تحسين المظهر في الشاشات الصغيرة */
 @media (max-width: 600px) {
   .filters {
     flex-direction: column;
@@ -422,8 +394,6 @@ form#productForm textarea:focus {
     width: 100%;
   }
 }
-
-
 /* ==================================================================================== */
 .edit-btn, .delete-btn {
   display: inline-flex;

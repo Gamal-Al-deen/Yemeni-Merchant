@@ -1,18 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // التحقق من وجود المعلمة في الرابط
+
   const params = new URLSearchParams(window.location.search);
   if (params.get("openModal") === "true") {
     const addBtn = document.querySelector(".add-product-btn");
     if (addBtn) {
-      addBtn.click(); // يفتح المودال مباشرة
+      addBtn.click(); 
     }
   }
 });
 
-// تحميل المنتجات من التخزين المحلي
+
 let products = JSON.parse(localStorage.getItem("products") || "[]");
 let editIndex = null;
-let deleteIndex = null; // نخزن رقم المنتج المراد حذفه مؤقتًا
+let deleteIndex = null;
 
 document.addEventListener("DOMContentLoaded", () => {
   renderTable();
@@ -20,9 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const productForm = document.getElementById("productForm");
   const saveBtn = document.querySelector("#productModal .save-btn");
   const modalHeading = document.querySelector("#productModal .modal-header h3");
-
-  // زر إضافة منتج في القائمة الجانبية
-  document.querySelector(".add-button")?.addEventListener("click", () => openModal());
 
   if (productForm) {
     productForm.addEventListener("submit", function (e) {
@@ -62,25 +59,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // فلترة حسب الحالة والمدينة
+  
   document.getElementById("filterStatus")?.addEventListener("change", renderTable);
   document.getElementById("filterCity")?.addEventListener("change", renderTable);
 
   // البحث المباشر
   document.getElementById("searchInput")?.addEventListener("input", renderTable);
 
-  // زر الرجوع للأعلى
-  const scrollBtn = document.getElementById("backToTop");
-  if (scrollBtn) {
-    window.addEventListener("scroll", function () {
-      scrollBtn.classList.toggle("show", window.scrollY > 300);
-    });
-    scrollBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
 
-  // زر "نعم، احذف" في مودال التأكيد
+ 
   const confirmBtn = document.querySelector(".confirm-delete-btn");
   if (confirmBtn) {
     confirmBtn.addEventListener("click", () => {
@@ -95,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// فتح نافذة الإضافة أو التعديل
+
 function openModal(index = null) {
   const modal = document.getElementById("productModal");
   const saveBtn = document.querySelector("#productModal .save-btn");
@@ -126,7 +113,7 @@ function openModal(index = null) {
   }
 }
 
-// إغلاق نافذة الإضافة
+
 function closeModal() {
   const modal = document.getElementById("productModal");
   if (modal) {
@@ -135,7 +122,7 @@ function closeModal() {
   }
 }
 
-// عرض المنتجات في الجدول
+
 function renderTable() {
   const tableBody = document.querySelector(".product-table tbody");
   const numProducts = document.getElementById("numProducts");
@@ -194,7 +181,6 @@ function renderTable() {
   if (numProductsAva) numProductsAva.textContent = availableCount;
 }
 
-// فتح مودال تأكيد الحذف
 function deleteProduct(index) {
   deleteIndex = index;
   const modal = document.getElementById("deleteConfirmModal");
@@ -203,14 +189,14 @@ function deleteProduct(index) {
   if (modal) modal.style.display = "flex";
 }
 
-// إغلاق مودال الحذف
+
 function closeDeleteModal() {
   const modal = document.getElementById("deleteConfirmModal");
   if (modal) modal.style.display = "none";
   deleteIndex = null;
 }
 
-// دالة التوست (لو مش موجودة في main.js)
+
 function showToast(message) {
   let toast = document.getElementById("toast");
   if (!toast) {

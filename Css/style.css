@@ -8,13 +8,12 @@
   src: url(../font/Tajawal-Bold.ttf)
 }
 
-
 body {
   margin: 0;
   font-family: my-font, sans-serif !important;
-  background-color: #fff;
-  color: #181411;
   direction: rtl;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .container {
@@ -29,6 +28,7 @@ body {
   border-left: 3px solid #f4f2f0;
   display: flex;
   flex-direction: column;
+  position: sticky;
 
   justify-content: space-between;
 }
@@ -43,6 +43,7 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-top: -100px;
 }
 
 .menu li {
@@ -50,7 +51,6 @@ body {
   align-items: center;
   gap: 10px;
   padding: 10px;
-  /* background-color: #f4f2f0; */
   border-radius: 8px;
   margin-bottom: 10px;
 }
@@ -59,7 +59,6 @@ body {
   width: 24px;
   height: 24px;
   background-color: #ccc;
-
   border-radius: 4px;
 }
 
@@ -71,9 +70,7 @@ body {
   border: none;
   border-radius: 8px;
   font-weight: bold;
-
   margin-bottom: 20px !important;
-
   cursor: pointer;
 }
 
@@ -131,7 +128,6 @@ border-radius: 21px;
   width: 24px;
   height: 24px;
   background-color: #ccc;
-
   border-radius: 4px;
 }
 
@@ -146,11 +142,8 @@ border-radius: 21px;
   font-size: 16px;
 }
 
-
-
 .sidebar-right {
   display: flex;
-
 }
 
 .sidebar-right h1 {
@@ -160,23 +153,17 @@ border-radius: 21px;
 
 .notification-icon {
   position: relative;
-
-
   font-size: 24px;
   color: #333;
-
 }
 
 .badge-2 , .badge-3{
-  
   background-color: var(--main-color);
   color: white;
   font-size: 12px;
   padding: 4px 6px;
-  
   border-radius: 50%;
   animation: bounce 0.5s ease;
-
 }
 
 .badge {
@@ -190,7 +177,6 @@ border-radius: 21px;
   border-radius: 50%;
   animation: bounce 0.5s ease;
 }
-
 
 @keyframes bounce {
   0% {
@@ -208,16 +194,9 @@ border-radius: 21px;
   }
 }
 
-.menu {
-  margin-top: -200px;
-}
-
-
-
 .notification-icon :hover {
   animation: shake 0.5s;
 }
-
 
 @keyframes shake {
   0% {
@@ -244,13 +223,10 @@ border-radius: 21px;
 .card-img img {
   border-radius: 5px;
   width: 150px;
-
 }
 input{
   font-family: my-font, sans-serif;
 }
-
-
 
 .card-img button {
   background-color: var(--main-color);
@@ -274,19 +250,13 @@ input{
   flex-wrap: wrap;
   display: flex;
   gap: 30px;
-
-
   border-radius: 12px;
-
   padding: 10px;
   margin: 0;
- 
 }
-
 .cards p {
   text-align: center;
   margin-top: -7px;
-
 }
 
 .section-text {
@@ -312,14 +282,12 @@ position: relative;
 bottom: 0;
 }
 
-
 .icon-twasl img{
   width: 30px;
   left: 10px;
 }
 .icon-twasl2  img{
   width: 40px;
-
   align-items: center;
 }
 .icon-twasl2 {
@@ -327,7 +295,6 @@ bottom: 0;
   gap: 10px;
   margin-right: 00px;
 }
-
 
 .icon-twasl a ,.icon-twasl2 a {
   text-decoration: none;
@@ -342,10 +309,7 @@ footer p {
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-
-
 }
-
 
 .card-img:hover,
 .nav-actions img:hover,
@@ -371,20 +335,15 @@ button:hover{
 padding-left: 110px;
 }
 
-
-
 .menu a li img{
   width: 22px;
 }
-
 aside{
   
   position: sticky;
   top: 0;
   height: 100vh
 }
-
-/* تأثير hover على عناصر القائمة الجانبية */
 .sidebar .menu li {
   display: flex;
   align-items: center;
@@ -392,15 +351,11 @@ aside{
   transition: transform 0.3s ease, background-color 0.3s ease;
   cursor: pointer;
 }
-
-/* تنسيق الصورة والنص داخل li */
 .sidebar .menu li img {
   margin-left: 10px;
   transition: transform 0.3s ease;
 }
-
 .sidebar .menu li .menu-text {
-  
   transition: transform 0.3s ease;
 }
 
@@ -415,21 +370,19 @@ aside{
   font-size: 16px;
 }
 
-/* التأثير عند المرور */
+
 .sidebar .menu li:hover {
-  background-color: #f0f0f0; /* لون خلفية خفيف */
-  transform: translateX(-5px); /* إزاحة العنصر بالكامل لليسار */
+  background-color: #f0f0f0; 
+  transform: translateX(-5px); 
 }
 
 .sidebar .menu li:hover img {
-  transform: translateX(-5px); /* إزاحة الصورة لليسار */
+  transform: translateX(-5px); 
 }
 
 .sidebar .menu li:hover .menu-text {
-  transform: translateX(-5px); /* إزاحة النص لليسار */
+  transform: translateX(-5px); 
 }
-
-/* ✅ نافذة منبثقة */
 .modal {
   display: none;
   position: fixed;
@@ -443,7 +396,6 @@ aside{
   align-items: center;
 }
 
-/* ✅ محتوى النافذة مع تأثير دخول */
 .modal-content {
   background-color: #fff;
   padding: 25px;
@@ -456,7 +408,6 @@ aside{
   animation: zoomIn 0.4s ease;
 }
 
-/* ✅ تأثير zoom عند الفتح */
 @keyframes zoomIn {
   0% {
     transform: scale(0.7);
@@ -468,27 +419,24 @@ aside{
   }
 }
 
-/* ✅ صورة داخل النافذة */
 .modal-content img {
   border-radius: 8px;
   margin-bottom: 10px;
 }
 
-/* ✅ عنوان داخل النافذة */
 .modal-content h3 {
   margin-bottom: 10px;
   font-size: 20px;
   color: #333;
 }
 
-/* ✅ نصوص داخل النافذة */
 .modal-content p {
   margin: 5px 0;
   font-size: 16px;
   color: #555;
 }
 
-/* ✅ زر الإغلاق */
+
 .close {
   position: absolute;
   top: 10px;
@@ -498,7 +446,6 @@ aside{
   color: #888;
 }
 
-/* ✅ أزرار الطلب والإلغاء */
 .modal-actions {
   margin-top: 15px;
   display: flex;
@@ -523,7 +470,6 @@ aside{
   background-color: var(--hover-color);
 }
 
-/* ✅ زر الإلغاء */
 #cancelBtn {
   background-color: #dc3545;
 }
@@ -532,7 +478,6 @@ aside{
   background-color: #a71d2a;
 }
 
-/* ✅ رسالة تأكيد الطلب مع تأثير دخول وخروج */
 .message-box {
   margin-top: 15px;
   background-color: #d4edda;
@@ -543,7 +488,6 @@ aside{
   animation: fadeInOut 3s forwards;
 }
 
-/* ✅ تأثير الرسالة */
 @keyframes fadeInOut {
   0% { opacity: 0; transform: translateY(-10px); }
   10% { opacity: 1; transform: translateY(0); }
@@ -655,8 +599,6 @@ aside{
   100% { opacity: 0; transform: translateY(-10px); }
 }
 /* =============================================================================================== */
-        
-
       @media (min-width: 451px) and (max-width: 840px) {
         .sidebar {
           width: 180px;
@@ -670,8 +612,6 @@ aside{
           font-size: 15px;
           padding: 10px 14px;
         }
-  
-
         .modal-content {
           max-width: 350px;
         }
@@ -750,7 +690,6 @@ font-size: 18px;
     display: none;
   }
 }
-
 .rating {
   color: gold;
   font-size: 1.1em;
@@ -763,7 +702,6 @@ font-size: 18px;
 }
 
 /* ================================زر الرجوع============================================================== */
-/* زر الرجوع إلى الأعلى */
 #scrollTopBtn {
   position: fixed;
   bottom: 25px;
@@ -780,19 +718,16 @@ font-size: 18px;
   pointer-events: none;
 }
 
-/* عند الظهور */
 #scrollTopBtn.show {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* تأثير عند المرور */
 #scrollTopBtn:hover {
   background-color: #f0f0f0;
   transform: scale(1.1) rotate(-10deg);
 }
 
-/* دوران الأيقونة عند الضغط */
 #scrollTopBtn img {
   display: block;
   transition: transform 0.3s ease;
@@ -806,9 +741,7 @@ font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px; /* مسافة بين الأيقونة والنص */
-
-  
+  gap: 8px;
   border: none;
   padding: 10px 16px;
   border-radius: 6px;
@@ -817,16 +750,12 @@ font-size: 18px;
   transition: background-color 0.2s ease;
 }
 
-
-
 .add-button .btn-icon {
   width: 22px;
   height: 22px;
   z-index: 5;
-   
 }
 .pic-wrapper> img,.account-img{
-
   border-style: solid ;
   border-width: 1px;
   border-color:#181411 ;
@@ -841,27 +770,16 @@ button{
   font-family: my-font,sans-serif;
 }
 
-/* ألوان الوضع الافتراضي موجودة لديك بالفعل */
-
-/* متغيرات عامة للخلفية والنص */
 :root {
   --bg-color: #ffffff;
   --text-color: #181411;
 }
 
-/* تطبيق المتغيرات على العناصر الأساسية */
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
-/* وضع ليلي */
 [data-theme="dark"] {
   --bg-color: #181a1f;
   --text-color: #eaeaea;
 }
 
-/* أمثلة لتوافق الأقسام الشائعة مع الوضع الليلي */
 [data-theme="dark"] .sidebar {
   background-color: #4a4a4a;
   border-left-color: #2a2b31;
@@ -890,7 +808,6 @@ body {
   background-color: #4a4a4a;
 }
 
-/* الأزرار التي تعتمد على --main-color تعمل تلقائياً لأننا لم نغيّرها */
 
 :root {
   --main-color: #e66b19;
@@ -904,7 +821,7 @@ body {
   --text-color: #eaeaea;
 }
 
-/* CSS للـ Toast */
+/*   toast */
 #toast {
   visibility: hidden;
   min-width: 250px;
@@ -920,17 +837,19 @@ body {
   opacity: 0;
   transition: opacity 0.5s, top 0.5s;
 }
+
 #toast.show {
   visibility: visible;
   opacity: 1;
   top: 40px;
 }
+/* ===================================================== */
 
 .slider {
   position: relative;
   max-width: 100%;
   height: 450px;
-  margin-bottom: 40px; /* مساحة للنقاط */
+  margin-bottom: 40px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
 }
@@ -948,7 +867,6 @@ body {
   animation: fade 1s;
 }
 
-/* الأزرار فوق الصور يمين ويسار */
 .slider .prev,
 .slider .next {
   position: absolute;
@@ -974,10 +892,10 @@ body {
 .slider .prev { left: 15px; }
 .slider .next { right: 15px; }
 
-/* النقاط أسفل السلايدر */
+
 .dots {
   position: absolute;
-  bottom: -30px; /* تحت السلايدر */
+  bottom: -30px; 
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1014,7 +932,6 @@ font-family: my-font,sans-serif;
   transition: all 0.3s ease;
 }
 
-
 .filter-bar select:hover {
   border-color: var(--main-color, #e66b19);
   box-shadow: 0 0 6px rgba(230,107,25,0.3);
@@ -1030,14 +947,6 @@ font-family: my-font,sans-serif;
   padding: 8px;
 }
 
-
-
-
-
-
-
-
-
 #backToTop {
   display: none; 
   position: fixed;
@@ -1052,7 +961,6 @@ font-family: my-font,sans-serif;
 }
 
 #backToTop img {
-
   border-radius: 8px;
   width: 40px;   
   height: 40px;
@@ -1064,8 +972,59 @@ font-family: my-font,sans-serif;
   transform: scale(1.1); 
 }
 
+.user-modal {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 10px 15px;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
 
+.user-modal .modal-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.user-avatar {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-info {
+  flex: 1;
+  text-align: center;
+}
+
+.user-name {
+  margin: 0;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.user-email {
+  margin: 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.settings-link {
+  text-decoration: none;
+}
+
+.settings-icon {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
 
 
 

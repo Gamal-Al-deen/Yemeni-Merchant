@@ -1,9 +1,19 @@
 
+@font-face {
+  font-family: "my-font";
+  src: url(../font/Tajawal-Medium.ttf)
+}
+
+@font-face {
+  font-family: "my-font-bold";
+  src: url(../font/Tajawal-Bold.ttf)
+}
+
   :root{
     --font: my-font, sans-serif;
   }
 body {
-    font-family: 'Cairo', sans-serif;
+  font-family: my-font, sans-serif !important;
     background: linear-gradient(to right, #f0f4f8, #d9e2ec);
     margin: 0;
     padding: 0;
@@ -24,16 +34,17 @@ body {
     max-height: 100px;
     font-family: var(--font);
   }
-  .badge-2{
-    
-    font-size: 10px;
 
+  .badge-2{
+    font-size: 10px;
+    margin-right: -100px !important;
   }
+
   .badge-3{
     margin-right: -100px !important;
     font-size: 10px;
-
   }
+
   h1 {
     text-align: center;
     color: var(--text-color);
@@ -47,8 +58,9 @@ body {
     color: #34495e;
     font-weight: bold;
   }
+   
   .contact-section .icon-twasl2{
-margin-right: 200px;
+   margin-right: 200px;
   }
   
   input, textarea {
@@ -79,21 +91,6 @@ margin-right: 200px;
   }
   
 
-  #successMessage {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #dff0d8;
-    color: #3c763d;
-    border-radius: 8px;
-    text-align: center;
-    font-family: var(--font);
-    font-weight: bold;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
   .add-button{
   margin-bottom: 200px !important;
  
@@ -154,7 +151,6 @@ height: 40px;
     background-color: #c82333;
   }
 
- 
   body {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -171,7 +167,6 @@ height: 40px;
     --bg-color: #666161;
     --text-color: #eaeaea;
   }
- 
   
   [data-theme="dark"] .container{
    background-color:  #4a4a4a;
@@ -181,8 +176,63 @@ height: 40px;
   [data-theme="dark"] input{
    background-color:  #666161;}
 
-  [data-theme="dark"] input{
-   background-color:  #666161;}
-
   [data-theme="dark"] textarea{
    background-color:  #666161;}
+
+   .contact-form input,
+.contact-form textarea,
+.contact-form button {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+
+@media (max-width: 768px) {
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .contact-form textarea {
+    height: 120px;
+    resize: vertical;
+  }
+
+  .contact-form button {
+    font-size: 15px;
+    padding: 12px;
+    background-color: #e66b19;
+    border-radius: 8px;
+  }
+
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #3c763d;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}

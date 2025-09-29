@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // بيانات المنتجات
+
     const products = [
       {
         name: "شيلان الفخامة",
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     ];
   
-    // بيانات الشركات
+    //  الشركات
     const companies = [
       {
         name: "شركة قهوة",
@@ -115,7 +115,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     ];
   
-    // عناصر HTML
+ 
+    
     const container = document.getElementById("productCards");
     const filterSelect = document.getElementById("categoryFilter");
     const companyContainer = document.getElementById("companyCards");
@@ -129,19 +130,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const cancelBtn = document.getElementById("cancelBtn");
     const confirmBtn = document.getElementById("confirmBtn");
     const confirmSection = document.getElementById("confirmSection");
-    const messageBox = document.getElementById("messageBox");
+
     const closeBtn = document.querySelector(".close");
     const followBtn = document.getElementById("followBtn");
     const followerCount = document.getElementById("followerCount");
     const followSection = document.getElementById("followSection");
   
-    // عرض المنتجات
+  
     function renderProducts(list) {
       container.innerHTML = "";
       list.forEach(item => {
         const card = document.createElement("div");
         card.className = "card-img";
-        card.innerHTML = `<img src="${item.image}" alt="${item.name}" width="200"><p>${item.name}</p>`;
         card.innerHTML = `<img src="${item.image}" alt="${item.name}" width="200">
   <p>${item.name}</p>
   <div class="rating">★★★★☆ <span>(4.2)</span></div>
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   
-    // فلترة
+ 
     filterSelect.onchange = () => {
       const selected = filterSelect.value;
       const filtered = selected === "الكل" ? products : products.filter(p => p.category === selected);
@@ -179,14 +179,14 @@ document.addEventListener("DOMContentLoaded", () => {
       renderCompanies(filtered);
     };
   
-    // عرض النافذة المنبثقة
+    
     function showModal(item) {
       modalImage.src = item.image;
       modalTitle.textContent = item.name;
-      messageBox.style.display = "none";
+     
   
       if (item.price) {
-        // منتج
+      
         modalDescription.innerHTML = `
           <p>الصنف: ${item.category}</p>
           <p>السعر: ${item.price}</p>
@@ -207,14 +207,14 @@ document.addEventListener("DOMContentLoaded", () => {
         };
   
         confirmBtn.onclick = () => {
-          modal.style.display = "none"; // إغلاق المودال
-          showToast("✅ تم إرسال طلبك بنجاح"); // إشعار عام Toast
+          modal.style.display = "none"; 
+          showToast("✅ تم إرسال طلبك بنجاح"); 
         };
         
       
   
       } else {
-        // شركة
+
         modalDescription.innerHTML = `
           <p>النشاط: ${item.activity}</p>
           <p>الصنف: ${item.category}</p>
@@ -253,20 +253,20 @@ document.addEventListener("DOMContentLoaded", () => {
   
       modal.style.display = "flex";
     }
+    
   
-    // زر الإغلاق
+
     closeBtn.addEventListener("click", () => {
       modal.style.display = "none";
     });
   
-    // إغلاق عند الضغط خارج النافذة
     window.addEventListener("click", (e) => {
       if (e.target === modal) {
         modal.style.display = "none";
       }
     });
   
-    // تحميل أولي للبيانات
+  
     renderProducts(products);
     renderCompanies(companies);
   });
@@ -278,7 +278,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const dotsContainer = document.querySelector(".dots");
     let index = 0;
   
-    // إنشاء النقاط
     slides.forEach((_, i) => {
       const dot = document.createElement("span");
       if (i === 0) dot.classList.add("active");
@@ -307,7 +306,7 @@ document.addEventListener("DOMContentLoaded", () => {
       showSlide(index);
     });
   
-    // تشغيل تلقائي
+
     setInterval(() => {
       index = (index + 1) % slides.length;
       showSlide(index);
@@ -315,7 +314,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   
 
-// دالة لإظهار Toast
+
 function showToast(message) {
   const toast = document.getElementById("toast");
   toast.textContent = message;
@@ -325,5 +324,3 @@ function showToast(message) {
   }, 3000);
 }
 
-// مثال: استدعاء التوست عند نجاح الطلب
-// showToast("✅ تم إرسال طلبك بنجاح");

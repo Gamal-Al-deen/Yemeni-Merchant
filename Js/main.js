@@ -1,12 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1) صورة الحساب
   const savedImage = localStorage.getItem("profileImage");
+  const savedName = localStorage.getItem("profileName") || "جمال الدين الحقل";
+  const savedEmail = localStorage.getItem("profileEmail") || "jamal@email.com";
+
   const headerImg = document.querySelector(".nav-actions img.account-img");
-  if (savedImage && headerImg) {
-    headerImg.src = savedImage;
+  if (headerImg) headerImg.src = savedImage;
+
+
+  const modalUserImage = document.getElementById("modalUserImage");
+  if (modalUserImage) modalUserImage.src = savedImage;
+
+
+  const userName = document.getElementById("userName");
+  const userEmail = document.getElementById("userEmail");
+  if (userName) userName.textContent = savedName;
+  if (userEmail) userEmail.textContent = savedEmail;
+
+ 
+  const accountImg = document.querySelector(".account-img");
+  const userModal = document.getElementById("userModal");
+
+  if (accountImg && userModal) {
+    accountImg.addEventListener("click", () => {
+   
+      userModal.style.display = (userModal.style.display === "block") ? "none" : "block";
+    });
+
+
+    document.addEventListener("click", (e) => {
+      if (!userModal.contains(e.target) && !accountImg.contains(e.target)) {
+        userModal.style.display = "none";
+      }
+    });
   }
 
-  // 2) الوضع الليلي/النهاري
   const THEME_KEY = "app_theme";
   const htmlEl = document.documentElement;
   const themeToggleBtn = document.getElementById("themeToggle");
@@ -16,10 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
   applyTheme(savedTheme);
   updateThemeIcon(savedTheme);
 
-  if (themeToggleBtn && themeIcon) {
+  if (themeToggleBtn) {
     themeToggleBtn.addEventListener("click", () => {
-      const currentTheme = htmlEl.getAttribute("data-theme") === "dark" ? "dark" : "light";
-      const nextTheme = currentTheme === "dark" ? "light" : "dark";
+      const current = htmlEl.getAttribute("data-theme") === "dark" ? "dark" : "light";
+      const nextTheme = current === "dark" ? "light" : "dark";
       applyTheme(nextTheme);
       updateThemeIcon(nextTheme);
       localStorage.setItem(THEME_KEY, nextTheme);
@@ -40,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     themeIcon.alt = theme === "dark" ? "الوضع النهاري" : "الوضع الليلي";
   }
 
-  // 3) اللون الأساسي
+
   const PRIMARY_KEY = "app_primary_color";
   const colorPicker = document.getElementById("primaryColorPicker");
 
@@ -51,29 +78,27 @@ document.addEventListener("DOMContentLoaded", () => {
   if (colorPicker) {
     colorPicker.addEventListener("input", (e) => {
       const color = e.target.value;
-      document.documentElement.style.setProperty("--primary-color", color);
+      document.documentElement.style.setProperty("--main-color", color);
       localStorage.setItem(PRIMARY_KEY, color);
     });
   }
-});
 
 
+  let backToTopBtn = document.getElementById("backToTop");
+  if (backToTopBtn) {
+    window.addEventListener("scroll", () => {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    });
 
-let backToTopBtn = document.getElementById("backToTop");
-
-window.onscroll = function() {
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    backToTopBtn.style.display = "block";
-  } else {
-    backToTopBtn.style.display = "none";
+    backToTopBtn.onclick = function() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    };
   }
-};
-
-backToTopBtn.onclick = function() {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-};
-
-
+});

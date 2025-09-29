@@ -1,38 +1,34 @@
-// تحميل الطلبات من التخزين المحلي
+
 let orders = JSON.parse(localStorage.getItem("orders") || "[]");
 
 window.addEventListener("DOMContentLoaded", () => {
-  // تحقق إذا كانت هذه أول مرة في جلسة التصفح
-
-    // إخفاء جميع عناصر badge-2
+ 
     document.querySelectorAll(".badge-2").forEach(badge => {
       badge.style.display = "none";
     });
 
-    // حفظ حالة الزيارة في sessionStorage
-    sessionStorage.setItem("ordersPageVisited", "true");
   }
 );
 
 
-// عرض الطلبات عند تحميل الصفحة
+
 window.addEventListener("DOMContentLoaded", () => {
   renderOrders();
 
-  // تفعيل البحث المباشر
+
   const searchInput = document.querySelector(".filters input");
   searchInput.addEventListener("input", () => {
     renderOrders(searchInput.value.trim());
   });
 
-  // تفعيل فلترة الحالة
+
   const statusFilter = document.querySelector(".filters select");
   statusFilter.addEventListener("change", () => {
     renderOrders(searchInput.value.trim());
   });
 });
 
-// عرض الطلبات في الجدول
+
 function renderOrders(searchTerm = "") {
   const tableBody = document.querySelector(".orders-table tbody");
   const selectedStatus = document.querySelector(".filters select").value;
@@ -53,7 +49,7 @@ function renderOrders(searchTerm = "") {
     tableBody.innerHTML = `
       <tr>
         <td colspan="7" style="text-align:center; color:#999;">
-          🚫 لا توجد طلبات مطابقة للبحث أو الفلترة
+           لا توجد طلبات مطابقة للبحث أو الفلترة
         </td>
       </tr>`;
     return;
@@ -77,11 +73,11 @@ function renderOrders(searchTerm = "") {
     `;
     tableBody.appendChild(row);
 
-    // زر عرض التفاصيل
+  
     row.querySelector(".action-btn").addEventListener("click", () => {
       const existingDetailsRow = row.nextElementSibling;
       if (existingDetailsRow && existingDetailsRow.classList.contains("details-row")) {
-        existingDetailsRow.remove(); // إغلاق التفاصيل
+        existingDetailsRow.remove(); 
         return;
       }
 
@@ -107,12 +103,12 @@ function renderOrders(searchTerm = "") {
       `;
       row.after(detailsRow);
 
-      // حفظ الحالة الجديدة
+    
       detailsRow.querySelector(".save-status-btn").addEventListener("click", () => {
         const newStatus = detailsRow.querySelector(".status-select").value;
         order.status = newStatus;
         localStorage.setItem("orders", JSON.stringify(orders));
-        renderOrders(searchTerm); // إعادة العرض بالتحديث
+        renderOrders(searchTerm); 
       });
     });
   });

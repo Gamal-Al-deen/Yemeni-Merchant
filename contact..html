@@ -12,7 +12,7 @@
 
 <body>
   <div class="container">
-    <!-- ✅ الشريط الجانبي -->
+
     <aside class="sidebar">
       <div class="sidebar-right">
         <a href="index.html"> 
@@ -22,29 +22,20 @@
         <h1>التاجر اليمني</h1>
       </div>
       <ul class="menu">
-        <a href="index.html">
-          <li><img src="icon/home-icon-silhouette.png" alt=""><span class="menu-text">الرئيسية</span></li>
-        </a>
-        <a href="products.html">
-          <li><img src="icon/booking.png" alt=""><span class="menu-text">المنتجات</span></li>
-        </a>
-        <a href="requests.html">
-          <li><img src="icon/lists.png" alt=""><span class="menu-text">الطلبات</span><span class="badge-2">3</span></li>
-        </a>
-        <a href="messages.html"><li><img src="icon/chat-bubble.png" alt=""><span class="bad menu-text">الرسائل</span><span class="badge-3">1</span></li></a>
-        <a href="contact.html">
-          <li class="selected"><img src="icon/information.png" alt=""><span class="menu-text">تواصل معنا</span></li>
-        </a>
-        <a href="account.html">
-          <li><img src="icon/profile.png" alt=""><span class="menu-text">إعدادات الحساب</span></li>
-        </a>
+        <a href="index.html"><li><img src="icon/home-icon-silhouette.png" alt="أيقونة الرئيسية"><span class="menu-text">الرئيسية</span></li></a>
+        <a href="shoping.html"><li><img src="icon/purchase.png" alt="أيقونة التسوق"><span class="menu-text">التسوق</span></li></a>
+        <a href="add_products.html"><li><img src="icon/booking.png" alt="أيقونة المنتجات"><span class="menu-text">أضافة منتج</span></li></a>
+        <a href="requests.html"><li><img src="icon/lists.png" alt="أيقونة الطلبات"><span class="bad menu-text">الطلبات</span><span class="badge-2">3</span></li></a>
+        <a href="messages.html"><li><img src="icon/chat-bubble.png" alt="أيقونة الرسائل"><span class="bad menu-text">الرسائل</span><span class="badge-3">1</span></li></a>
+        <a href="contact.html"><li class="selected"><img src="icon/information.png" alt="أيقونة تواصل معنا"><span class="menu-text">تواصل معنا</span></li></a>
+        <a href="account.html"><li><img src="icon/profile.png" alt="أيقونة الحساب"><span class="menu-text">إعدادات الحساب</span></li></a>
       </ul>
-      <button class="add-button"  onclick="window.location.href='products.html?openModal=true'">إضافة منتج</button>
+      <button class="add-button"  onclick="window.location.href='add_products.html?openModal=true'">إضافة منتج</button>
     </aside>
 
-    <!-- ✅ المحتوى الرئيسي -->
+
     <main class="main-content">
-      <!-- ✅ رأس الصفحة -->
+
       <header class="navbar">
         <img src="imgs/logo.png" alt="الشعار" width="80">
         <h2>الـــتـــــــاجــــر الـــيـــمـــنـــي</h2>
@@ -58,8 +49,23 @@
           <img src="icon/account.png" alt="" width="32" height="32" class="account-img">
         </div>
       </header>
+           <!-- حول الحساب -->
+     <div id="userModal" class="user-modal">
+      <div class="modal-content">
+      
+        <img id="modalUserImage" src="user.png" alt="User" class="user-avatar">
+    
+        <div class="user-info">
+          <p id="userName" class="user-name"></p>
+          <p id="userEmail" class="user-email"></p>
+        </div>
+   
+        <a href="account.html" class="settings-link">
+          <img src="icon/profile.png" alt="Settings" class="settings-icon">
+        </a>
+      </div>
+    </div>
 
-      <!-- ✅ نموذج التواصل -->
       <section class="contact-section">
 
         <h2 class="section-text2"> راسلنا مباشرة:</h2>
@@ -78,15 +84,13 @@
 
         <h4 class="section-text2">راسلنا عبر البريد الاكتروني:</h4>
         <form id="contactForm" class="contact-form">
-          <input type="text" id="name" name="name" placeholder="الاسم الكامل" required>
-          <input type="email" id="email" name="email" placeholder="البريد الإلكتروني" required>
-          <textarea id="message" name="message" rows="5" placeholder="اكتب رسالتك هنا" required></textarea>
+          <input type="text" id="name" name="name" placeholder="الاسم الكامل" >
+          <input type="email" id="email" name="email" placeholder="البريد الإلكتروني" >
+          <textarea id="message" name="message" rows="5" placeholder="اكتب رسالتك هنا" ></textarea>
           <button type="submit">إرسال الرسالة</button>
         </form>
-        <div id="successMessage" class="hidden">✅ تم إرسال رسالتك بنجاح! سنرد عليك قريبًا.</div>
       </section>
 
-      <!-- ✅ التذييل -->
       <footer>
         <p>حقوق الطبع والنشر محفوظ لدى م/ جمال الدين 2025 &copy;</p>
         <div class="icon-twasl">
@@ -98,24 +102,26 @@
     </main>
   </div>
 
-  <!-- ✅ JavaScript -->
-  <script>
-    document.getElementById("contactForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const message = document.getElementById("message").value.trim();
 
-      if (name && email && message) {
-        document.getElementById("successMessage").classList.remove("hidden");
-        this.reset();
-        setTimeout(() => {
-          document.getElementById("successMessage").classList.add("hidden");
-        }, 5000);
-      }
-    });
-  </script>
-  <script src="js/main.js"></script>
+
+
+<div id="errorModal" class="modal-overlay hidden">
+  <div class="modal-box error">
+    <p id="errorMessageText">حدث خطأ ما.</p>
+  </div>
+</div>
+
+
+
+<div id="successModal" class="modal-overlay hidden">
+  <div class="modal-box">
+    <p>✅ تم إرسال رسالتك بنجاح! </p>
+  </div>
+</div>
+
+
+ <SCript src="Js/contact.js" ></SCript>
+  <script src="Js/main.js"></script>
 </body>
 
-</html>
+</html

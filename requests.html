@@ -17,14 +17,15 @@
         <h1>التاجر اليمني</h1>
       </div>
       <ul class="menu">
-        <a href="index.html"><li><img src="icon/home-icon-silhouette.png" alt=""><span class="menu-text">الرئيسية</span></li></a>
-        <a href="products.html"><li><img src="icon/booking.png" alt=""><span class="menu-text">المنتجات</span></li></a>
-        <a href="requests.html"><li class="selected"><img src="icon/lists.png" alt=""><span class="bad menu-text">الطلبات</span><span class="badge-2">3</span></li></a>
-        <a href="messages.html"><li><img src="icon/chat-bubble.png" alt=""><span class="bad menu-text">الرسائل</span><span class="badge-3">1</span></li></a>
-                <a href="contact..html"><li><img src="icon/information.png" alt=""><span class="menu-text">تواصل معنا</span></li></a>
-        <a href="account.html"><li><img src="icon/profile.png" alt=""><span class="menu-text">إعدادات الحساب</span></li></a>
+        <a href="index.html"><li><img src="icon/home-icon-silhouette.png" alt="أيقونة الرئيسية"><span class="menu-text">الرئيسية</span></li></a>
+        <a href="shoping.html"><li><img src="icon/purchase.png" alt="أيقونة التسوق"><span class="menu-text">التسوق</span></li></a>
+        <a href="add_products.html"><li><img src="icon/booking.png" alt="أيقونة المنتجات"><span class="menu-text">أضافة منتج</span></li></a>
+        <a href="requests.html"><li  class="selected"><img src="icon/lists.png" alt="أيقونة الطلبات"><span class="bad menu-text">الطلبات</span><span class="badge-2">3</span></li></a>
+        <a href="messages.html"><li><img src="icon/chat-bubble.png" alt="أيقونة الرسائل"><span class="bad menu-text">الرسائل</span><span class="badge-3">1</span></li></a>
+        <a href="contact..html"><li><img src="icon/information.png" alt="أيقونة تواصل معنا"><span class="menu-text">تواصل معنا</span></li></a>
+        <a href="account.html"><li><img src="icon/profile.png" alt="أيقونة الحساب"><span class="menu-text">إعدادات الحساب</span></li></a>
       </ul>
-      <button class="add-button"  onclick="window.location.href='products.html?openModal=true'">إضافة منتج</button>
+      <button class="add-button"  onclick="window.location.href='add_products.html?openModal=true'">إضافة منتج</button>
     </aside>
 
     <main class="main-content">
@@ -43,6 +44,23 @@
         </div>
       </header>
 
+
+     <div id="userModal" class="user-modal">
+      <div class="modal-content">
+      
+        <img id="modalUserImage" src="user.png" alt="User" class="user-avatar">
+    
+        <div class="user-info">
+          <p id="userName" class="user-name"></p>
+          <p id="userEmail" class="user-email"></p>
+        </div>
+   
+        <a href="account.html" class="settings-link">
+          <img src="icon/profile.png" alt="Settings" class="settings-icon">
+        </a>
+      </div>
+    </div>
+    
       <section class="orders-section">
         <h2>الطلبات الحالية</h2>
 
@@ -69,7 +87,7 @@
             </tr>
           </thead>
           <tbody>
-            <!-- سيتم تعبئة الصفوف من JavaScript -->
+          
           </tbody>
         </table>
       </section>
@@ -91,7 +109,7 @@
     </main>
   </div>
 
-  <!-- ربط ملف JavaScript -->
+
   <script src="Js/requests.js"></script>
   <script src="js/main.js"></script>
 </body>

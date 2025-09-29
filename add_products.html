@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>التاجر اليمني</title>
   <link rel="stylesheet" href="Css/style.css" />
-  <link rel="stylesheet" href="Css/style-products.css" />
+  <link rel="stylesheet" href="Css/style-add-products.css" />
   <link rel="website icon" href="imgs/logo.png" />
 </head>
 
@@ -17,12 +17,13 @@
         <h1>التاجر اليمني</h1>
       </div>
       <ul class="menu">
-        <a href="index.html"><li><img src="icon/home-icon-silhouette.png" alt=""><span class="menu-text">الرئيسية</span></li></a>
-        <a href="products.html"><li class="selected"><img src="icon/booking.png" alt=""><span class="menu-text">المنتجات</span></li></a>
-        <a href="requests.html"><li><img src="icon/lists.png" alt=""><span class="bad menu-text">الطلبات</span><span class="badge-2">3</span></li></a>
-        <a href="messages.html"><li><img src="icon/chat-bubble.png" alt=""><span class="bad menu-text">الرسائل</span><span class="badge-3">1</span></li></a>
-                <a href="contact..html"><li><img src="icon/information.png" alt=""><span class="menu-text">تواصل معنا</span></li></a>
-        <a href="account.html"><li><img src="icon/profile.png" alt=""><span class="menu-text">إعدادات الحساب</span></li></a>
+        <a href="index.html"><li><img src="icon/home-icon-silhouette.png" alt="أيقونة الرئيسية"><span class="menu-text">الرئيسية</span></li></a>
+        <a href="shoping.html"><li ><img src="icon/purchase.png" alt="أيقونة التسوق"><span class="menu-text">التسوق</span></li></a>
+        <a href="add_products.html"><li class="selected"><img src="icon/booking.png" alt="أيقونة المنتجات"><span class="menu-text">أضافة منتج</span></li></a>
+        <a href="requests.html"><li><img src="icon/lists.png" alt="أيقونة الطلبات"><span class="bad menu-text">الطلبات</span><span class="badge-2">3</span></li></a>
+        <a href="messages.html"><li><img src="icon/chat-bubble.png" alt="أيقونة الرسائل"><span class="bad menu-text">الرسائل</span><span class="badge-3">1</span></li></a>
+        <a href="contact..html"><li><img src="icon/information.png" alt="أيقونة تواصل معنا"><span class="menu-text">تواصل معنا</span></li></a>
+        <a href="account.html"><li><img src="icon/profile.png" alt="أيقونة الحساب"><span class="menu-text">إعدادات الحساب</span></li></a>
       </ul>
       <button class="add-button">إضافة منتج</button>
     </aside>
@@ -42,6 +43,24 @@
         </div>
       </header>
 
+    
+     <div id="userModal" class="user-modal">
+      <div class="modal-content">
+      
+        <img id="modalUserImage" src="user.png" alt="User" class="user-avatar">
+    
+        <div class="user-info">
+          <p id="userName" class="user-name"></p>
+          <p id="userEmail" class="user-email"></p>
+        </div>
+   
+        <a href="account.html" class="settings-link">
+          <img src="icon/profile.png" alt="Settings" class="settings-icon">
+        </a>
+      </div>
+    </div>
+
+
       <section class="products-section">
         <div class="card">
           <div class="card-ico"><img src="icon/booking.png" alt="" width="100"></div>
@@ -59,7 +78,7 @@
         </div>
         <input type="text" id="searchInput" placeholder="ابحث عن منتج...">
 
-        <!-- ✅ عناصر الفلترة -->
+      
         <div class="filters">
           <select id="filterStatus">
             <option value="">كل الحالات</option>
@@ -77,7 +96,6 @@
           </select>
         </div>
 
-        <!--  جدول المنتجات -->
         <table class="product-table">
           <thead>
             <tr>
@@ -90,7 +108,7 @@
             </tr>
           </thead>
           <tbody>
-            <!-- المنتجات  -->
+      
           </tbody>
         </table>
       </section>
@@ -117,6 +135,7 @@
         <h3>إضافة / تعديل منتج</h3>
         <span class="close-btn" onclick="closeModal()">&times;</span>
       </div>
+
       <form id="productForm">
         <input type="text" id="productName" placeholder="اسم المنتج" required>
         <input type="text" id="productCategory" placeholder="التصنيف" required>
@@ -142,8 +161,7 @@
       </form>
     </div>
   </div>
-  
-<!-- Modal تأكيد الحذف -->
+ 
 <div id="deleteConfirmModal" class="modal-overlay" style="display:none;">
   <div class="modal-content animate">
     <div class="modal-header">
@@ -154,7 +172,7 @@
       <p id="deleteMessage">هل أنت متأكد من حذف هذا المنتج؟</p>
     </div>
     <div class="modal-actions">
-      <button class="confirm-delete-btn">نعم، احذف</button>
+      <button class="confirm-delete-btn">حذف</button>
       <button class="cancel-btn" onclick="closeDeleteModal()">إلغاء</button>
     </div>
   </div>
@@ -162,7 +180,7 @@
 
 
   
-  <script src="js/products.js" defer></script>
+  <script src="js/add_products.js" defer></script>
   <script src="js/main.js"></script>
 
 </body>
